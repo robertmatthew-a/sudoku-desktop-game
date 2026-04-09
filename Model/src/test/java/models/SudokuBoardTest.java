@@ -28,6 +28,29 @@ public class SudokuBoardTest {
         // printBoard(sudokuBoard);
     }
 
+    // ADDED TEST BY STUDENT
+    @Test
+    void testCheckEndGameTrue() {
+        SudokuBoard sudokuBoard = new SudokuBoard(new BacktrackingSudokuSolver());
+        int[][] testBoard = {
+                        { 3, 2, 7, 6, 5, 1, 4, 8, 9 },
+                        { 5, 6, 9, 8, 7, 4, 3, 1, 2 },
+                        { 1, 4, 8, 2, 3, 9, 6, 7, 5 },
+                        { 7, 3, 6, 5, 4, 2, 8, 9, 1 },
+                        { 2, 5, 4, 1, 9, 8, 7, 6, 3 },
+                        { 9, 8, 1, 3, 6, 7, 2, 5, 4 },
+                        { 8, 9, 2, 4, 1, 6, 5, 3, 7 },
+                        { 6, 7, 3, 9, 2, 5, 1, 4, 8 },
+                        { 4, 1, 5, 7, 8, 3, 9, 2, 6 }
+                };
+        for (int y = 0; y < testBoard.length; y++) {
+            for (int x = 0; x < testBoard[y].length; x++) {
+                sudokuBoard.setField(x, y, testBoard[y][x]);
+            }
+        }
+        assertTrue(sudokuBoard.checkEndGame());
+    }
+
     @RepeatedTest(10)
     void testFillBoardSubsequentCalls() {
         SudokuBoard sudokuBoard1 = new SudokuBoard(new BacktrackingSudokuSolver());
