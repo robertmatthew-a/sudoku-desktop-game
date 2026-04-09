@@ -275,7 +275,7 @@ public class MainMenuController implements Initializable {
     private void displayAuthors() {
         ResourceBundle authorsResourceBundle = LanguageEnum.getAuthorsResourceBundle();
 
-        String university = authorsResourceBundle.getString("university");
+        String university = "Robert Matthew V. Andico";
         universityLabel.setText(university);
 
         String author1 = authorsResourceBundle.getString("247026");
